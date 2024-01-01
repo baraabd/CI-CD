@@ -61,13 +61,13 @@ jobs:
 
       - name: 'Deploy Function App'
         run: |
-          echo "AZURE_FUNCTIONAPP_NAME: ${{ secrets.AZURE_FUNCTIONAPP_NAME }}"
-          echo "AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}"
+          echo "AZURE_FUNCTIONAPP_NAME: $AZURE_FUNCTIONAPP_NAME"
+          echo "AZURE_RESOURCE_GROUP: $AZURE_RESOURCE_GROUP"
           az functionapp deployment source config --repo-url https://github.com/baraabd/CI-CD --branch main --manual-integration
-          az functionapp deployment source sync --name ${{ secrets.AZURE_FUNCTIONAPP_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }}
+          az functionapp deployment source sync --name $AZURE_FUNCTIONAPP_NAME --resource-group $AZURE_RESOURCE_GROUP
         env:
-          AZURE_FUNCTIONAPP_NAME: AzureFunction-SmokeTest-Bara
-          AZURE_RESOURCE_GROUP: GitActionWF-Bara        
+          AZURE_FUNCTIONAPP_NAME: ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
+          AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
 
 
           
