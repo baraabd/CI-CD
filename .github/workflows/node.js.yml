@@ -59,6 +59,12 @@ jobs:
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2700EDDEF777495F9793B9013C1DCB93 }}
 
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Azure CLI
+        uses: azure/setup-azure-cli@v1
+        
       - name: 'Deploy Function App'
         run: |
           echo "AZURE_FUNCTIONAPP_NAME: $AZURE_FUNCTIONAPP_NAME"
