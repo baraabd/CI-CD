@@ -61,9 +61,6 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Set up Azure CLI
-        uses: azure/setup-azure-cli@main
         
       - name: 'Deploy Function App'
         run: |
