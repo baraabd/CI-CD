@@ -62,10 +62,10 @@ jobs:
       - name: 'Deploy Function App'
         run: |
           az functionapp deployment source config --repo-url https://github.com/baraabd/CI-CD --branch main --manual-integration
-          az functionapp deployment source sync --name ${{ secrets.AZURE_FUNCTIONAPP_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }}
+          az functionapp deployment source sync --name AZUREAPPSERVICE_PUBLISHPROFILE_2700EDDEF777495F9793B9013C1DCB93 --resource-group AZUREAPPSERVICE_PUBLISHPROFILE_2700EDDEF777495F9793B9013C1DCB93
         env:
-          AZURE_FUNCTIONAPP_NAME: ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
-          AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+          AZURE_FUNCTIONAPP_NAME: AZUREAPPSERVICE_PUBLISHPROFILE_2700EDDEF777495F9793B9013C1DCB93
+          AZURE_RESOURCE_GROUP: AZUREAPPSERVICE_PUBLISHPROFILE_2700EDDEF777495F9793B9013C1DCB93
 
 
           
